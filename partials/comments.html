@@ -24,16 +24,15 @@
         <ul class="media-list">
           <li class="media post-item">
             <div class="media-left">
-              <img class="media-object" src="https://en.wikipedia.org/wiki/File:Bank_job_ver2.jpg" alt="picture of Jason!">
+              <img class="media-object" src="http://ia.media-imdb.com/images/M/MV5BMTkxMzk2MDkwOV5BMl5BanBnXkFtZTcwMDAxODQwMg@@._V1_UX214_CR0,0,214,317_AL_.jpg" alt="picture of Jason!">
             </div>
             <div class="media-body">
-              <h4 class="media-heading">{{post.post}} |
-                <span class="glyphicon glyphicon-arrow-up" ng-click="post.votes = post.votes + 1"></span>
-                <span class="glyphicon glyphicon-arrow-down" ng-click="post.votes = post.votes -1"></span>
-                <span class="badge">{{post.votes}}</span>
+              <h4 class="media-heading">{{post.post}}
+
               </h4>
               <p class="pull-right author">
                 <strong> By: {{post.name}} </strong>
+                <span><a type="submit" href="#/comments" ng-click="deletePost()" class="btn btn-default" value="post.id">Delete Post</a><span>
               </p>
               <p class="clear description">
                 {{post.description}}

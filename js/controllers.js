@@ -26,4 +26,9 @@ app.controller('HomeController', ['$scope', '$http', '$location', function($scop
       score: $scope.newScore
     });
   };
+
+  $scope.deletePost = function(){
+    console.log(this.post.id);
+    $http.delete('http://thebankjob.herokuapp.com/delete/' + this.post.id);
+  };
 }]);
