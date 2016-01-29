@@ -1,21 +1,17 @@
 <!-- /add post form -->
-<div class="container postForm" ng-show="view.addPostShow">
+<div class="container postForm" >
   <div class="panel panel-default">
     <div class="panel-body">
       <form name="addPostForm" ng-submit="addNewPost(post)" novalidate>
         <div class="form-group">
-          <label for="title">Title</label>
-          <input type="text" class="form-control" name="title" id="title" ng-model="post.title" ng-minlength="5" ng-maxlength="50" ng-class="{'error': addPostForm.title.$invalid && addPostForm.title.$touched}" placeholder="Post Title" required>
+          <label for="author">Name</label>
+          <input type="text" class="form-control" name="name" id="name" ng-model="post.name" ng-class="{'error': addPostForm.author.$invalid && addPostForm.author.$touched}" placeholder="Author Name" required>
         </div>
         <div class="form-group">
-          <label for="author">Author</label>
-          <input type="text" class="form-control" name="author" id="author" ng-model="post.author" ng-minlength="5" ng-maxlength="50" ng-class="{'error': addPostForm.author.$invalid && addPostForm.author.$touched}" placeholder="Author Name" required>
+          <label for="description">Your Thoughts</label>
+          <input type="text" class="form-control" name="post" id="post" ng-model="post.post" ng-minlength="5" ng-maxlength="255" ng-class="{'error': addPostForm.description.$invalid && addPostForm.description.$touched}" required placeholder="Description">
         </div>
-        <div class="form-group">
-          <label for="description">Description</label>
-          <input type="text" class="form-control" name="description" id="description" ng-model="post.description" ng-minlength="5" ng-maxlength="255" ng-class="{'error': addPostForm.description.$invalid && addPostForm.description.$touched}" required placeholder="Description">
-        </div>
-        <button ng-disabled="addPostForm.$invalid" type="submit" class="btn btn-default" value="post">Add Post</button>
+        <button type="submit" class="btn btn-default" value="post">Add Post</button>
       </form>
     </div>
   </div>
@@ -23,21 +19,21 @@
 <!--post container  -->
 <div class="container post-container">
   <div class="row">
-    <div class="panel panel-default" ng-repeat="post in view.posts | orderBy: view.currentFilter | filter: searchKeyword">
+    <div class="panel panel-default" ng-repeat="post in posts">
       <div class="panel-body">
         <ul class="media-list">
           <li class="media post-item">
             <div class="media-left">
-              <img class="media-object" src="https://en.wikipedia.org/wiki/File:Bank_job_ver2.jpg">
+              <img class="media-object" src="https://en.wikipedia.org/wiki/File:Bank_job_ver2.jpg" alt="picture of Jason!">
             </div>
             <div class="media-body">
-              <h4 class="media-heading">{{post.title}} |
+              <h4 class="media-heading">{{post.post}} |
                 <span class="glyphicon glyphicon-arrow-up" ng-click="post.votes = post.votes + 1"></span>
                 <span class="glyphicon glyphicon-arrow-down" ng-click="post.votes = post.votes -1"></span>
                 <span class="badge">{{post.votes}}</span>
               </h4>
               <p class="pull-right author">
-                <strong> By: {{post.author}} </strong>
+                <strong> By: {{post.name}} </strong>
               </p>
               <p class="clear description">
                 {{post.description}}

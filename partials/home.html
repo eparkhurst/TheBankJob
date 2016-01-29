@@ -1,21 +1,21 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
-  <div class="container">
+  <div class="container" ng-controller="HomeController">
     <h1>Welcome to The Bank Job Fan Site</h1>
     <p>How much do you love this movie? Are you, in fact, aware that this film does NOT star Mark Walhlberg? And takes place in London, not Italy? If so, this is the site for you...</p>
     <div class="container" <div class="row">
       <div class="col-md-3">
-        <p><a class="btn btn-primary btn-lg" href="#" role="button">Rate This Movie</a></p>
+        <p><a class="btn btn-primary btn-lg" ng-click="addScore()" href="#/" role="button">Rate This Movie</a></p>
       </div>
       <div class="col-md-3">
         <img class="rating" src="http://cdn.instructables.com/FD2/NWA6/FB11TWSI/FD2NWA6FB11TWSI.MEDIUM.jpg">
         <label class="radio-inline">
-          <input type="radio" name="optradio">Give it $5!</label>
+          <input type="radio" ng-model="newScore" value="5" name="optradio">Give it $5!</label>
       </div>
       <div class="col-md-3">
         <img class="rating" src="http://2xkcvt35vyxycuy7x23e0em1a5g.wpengine.netdna-cdn.com/wp-content/uploads/2015/06/tumblr-10.jpg">
         <label class="radio-inline">
-          <input type="radio" name="optradio">Give it $10!</label>
+          <input type="radio" ng-model="newScore" value="10" name="optradio">Give it $10!</label>
       </div>
       <div class="col-med-3">
         <h4>Currently Worth: {{ score | currency}}</h4>

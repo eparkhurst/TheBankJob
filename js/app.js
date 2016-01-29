@@ -12,11 +12,11 @@ var app = angular.module("bankJobApp", ['ngRoute'])
   })
   .when('/cast/', {
     templateUrl: 'partials/cast.html',
-    controller: 'CastController'
+    controller: 'HomeController'
   })
   .when('/photo/', {
     templateUrl: 'partials/photos.html',
-    controller: 'PhotosController'
+    controller: 'HomeController'
   })
   .otherwise({
     redirectTo: '/'
